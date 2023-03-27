@@ -1,0 +1,68 @@
+<app-menu></app-menu>
+<head>
+
+    <title>Listado de Clientes</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <link rel="stylesheet" href="/editar-cliente.component.css">
+  
+</head>
+<body class="img js-fullheight vh-100">
+    <section class="ftco-section">
+        <div class="container" *ngIf="cliente">
+            <div class="row mt-5">
+                <div class="col-md-4 mx-auto">
+                    <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre"
+                            [(ngModel)]="cliente.nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" class="form-control" id="apellido" name="apellido"
+                            [(ngModel)]="cliente.apellido" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="direccion">Dirección</label>
+                            <input type="text" class="form-control" id="direccion" name="direccion"
+                            [(ngModel)]="cliente.direccion" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="text" class="form-control" id="telefono" name="telefono"
+                            [(ngModel)]="cliente.telefono" required>
+                        </div>
+    
+                      <div class="form-group">
+                            <label for="plan">Plan Postpago</label>
+                            <select class="form-select"  id="plan" name="plan" [(ngModel)]="planPostpago2" (change)="actualizarPlanPostpago()" required>
+                                <option *ngFor="let plan of planesPostpago" [ngValue]="plan.planId" [selected]="plan.planId == planPostpago.planId">
+                                    {{plan.nombrePlan}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="tipo">Tipo Cliente</label>
+                            <select class="form-select"  id="tipo" name="tipo" [(ngModel)]="tipoCliente2" (change)="actualizarTipoCliente()" required>
+                                <option *ngFor="let tipo of tiposCliente" [ngValue]="tipo.tipoId" [selected]="tipo.tipoId == tipoCliente.tipoId">
+                                    {{tipo.nombre}}
+                                </option>
+                            </select>
+                        </div>
+                        <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+                            <i class="fas fa-pencil-alt"></i> Actualizar</button>
+                        <button class="btn btn-outline-primary btn-block" routerLink="/lista">
+                            <i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+

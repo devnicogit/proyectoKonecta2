@@ -1,0 +1,147 @@
+<app-menu></app-menu>
+<!--<div *ngIf="cliente">-->
+  <head>
+    <title>Listado de Clientes</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <link rel="stylesheet" href="/migracion.component.css">
+  
+  </head>
+<body class="img js-fullheight vh-100">
+  <h1 class="text-center">PANEL DE MIGRACIÓN</h1>
+  <section class="ftco-section">
+<h2>Cliente 1: {{cliente.nombre}} - DNI: 45454545</h2>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+<div class="row">
+    <div class="col-sm-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">MOVISTAR 3GB</h5>
+          <p class="card-text">Descripción del plan</p>
+          <a href="#" class="btn btn-primary">SELECCIONAR</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">MOVISTAR 5GB</h5>
+          <p class="card-text">Descripción del plan</p>
+          <a href="#" class="btn btn-primary">SELECCIONAR</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">MOVISTAR 7GB</h5>
+            <p class="card-text">Descripción del plan</p>
+            <a href="#" class="btn btn-primary">SELECCIONAR</a>
+          </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">MOVISTAR 10GB</h5>
+            <p class="card-text">Descripción del plan</p>
+            <a href="#" class="btn btn-primary">SELECCIONAR</a>
+          </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<hr>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-2">
+            <h6>Seleccionar detalle del plan</h6>
+            <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio1">Promoción 1</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio2">Promoción 2</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+              <label class="custom-control-label" for="customRadio3">Promoción 3</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
+            <label class="custom-control-label" for="customRadio4">Promoción 4</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input type="radio" id="customRadio5" name="customRadio" class="custom-control-input">
+          <label class="custom-control-label" for="customRadio5">Promoción 5</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="customRadio6" name="customRadio" class="custom-control-input">
+        <label class="custom-control-label" for="customRadio6">Promoción 6</label>
+    </div>
+        </div>
+		<div class="col">
+            <div class="container">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="input1">Detalle del plan</label>
+                      <textarea name="" id="input1" cols="30" rows="10" class="form-control"></textarea>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="input5">Nombre del agente</label>
+                      <input type="text" class="form-control" id="input5">
+                    </div>
+                    <div class="form-group">
+                      <label for="input6">DNI del agente</label>
+                      <input type="text" class="form-control" id="input6">
+                    </div>
+                    <div class="form-group">
+                      <label for="input7">GB ofrecidos</label>
+                      <input type="text" class="form-control" id="input7">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="input9">Número de Línea</label>
+                      <input type="text" class="form-control" id="input9">
+                    </div>
+                    <div class="form-group">
+                      <label for="input10">Tipo de Promo</label>
+                      <input type="text" class="form-control" id="input10">
+                    </div>
+                    <div class="form-group">
+                      <label for="input11">Número de Orden</label>
+                      <input type="text" class="form-control" id="input11">
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary btn-lg btn-block" (click)="ejecutarExe()"> <i class="fa-solid fa-phone"></i> LLAMAR</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+	</div>
+</div>
+<hr>
+<div class="row justify-content-between">
+    <div class="col-4">
+      <a href="">Número de Orden 123456798</a>
+    </div>
+    <div class="col-1">
+        <button type="button" class="btn btn-success">GENERAR</button>
+    </div>
+</div>
+</section>
+</body>
+<!--</div>-->

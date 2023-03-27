@@ -1,0 +1,24 @@
+<app-menu></app-menu>
+<div class="container">
+  <div class="row mt-5" *ngIf="pedido">
+    <div class="col-md-4 mx-auto">
+        <div class="card" style="width: 18rem;">
+            <div class="card-header text-center">
+              Detalle
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><b>ID Pedido: </b>{{pedido.idped}}</li>
+              <li class="list-group-item"><b>ID Usuario: </b>{{pedido.usuario.id}}</li>
+              <li class="list-group-item"><b>Cantidad: </b>{{pedido.cantidad}}</li>
+              <li class="list-group-item"><b>Precio Unitario: </b>{{pedido.precioUnitario}}</li>
+              <li class="list-group-item"><b>Precio Total: </b>{{pedido.precioTotal}}</li>
+              <li class="list-group-item"><b>Estado: </b>{{pedido.estado}}</li>
+            </ul>
+            <div class="card-footer">
+                <button class="btn btn-outline-primary btn-block" (click)="volver()"><i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+            </div>
+          </div>
+          
+    </div>
+</div>
+</div>

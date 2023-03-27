@@ -1,0 +1,82 @@
+<app-menu></app-menu>
+
+<head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <link rel="stylesheet" href="/send-email.component.css">
+  
+  </head>
+  <body class="img js-fullheight vh-100">
+  <section class="ftco-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 text-center mb-5">
+          <h2 class="heading-section">Olvidé Mi Contraseña</h2>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+          <div class="login-wrap p-0">
+            <h3 class="mb-4 text-center">Ingresa Usuario O Email</h3>
+            <form class="signin-form" #f="ngForm" (ngSubmit)="onSendEmail()" novalidate>
+              <div class="form-group">
+                <label class="text-info">Te enviaremos un correo para recuperar la contraseña</label>
+                <input type="text" name="mailTo" id="mailTo" class="form-control"
+                    [(ngModel)]="mailTo" placeholder="Nombre de Usuario o Email" required>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="form-control btn btn-primary submit px-3" [disabled]="!f.valid">Enviar Correo</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+  
+  </body>
+  
+<!--<div class="container d-flex justify-content-center">
+    <div class="card">
+        <div class="card-header">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/login">Iniciar Sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/registro">Crear Cuenta</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="/sendemail">Olvidé mi Contraseña</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="card-body">
+            <form #f="ngForm" (ngSubmit)="onSendEmail()" novalidate>
+                <div class="form-group text-center">
+                    <label class="text-info">Te enviaremos un correo para recuperar la contraseña</label>
+                    <input type="text" name="mailTo" id="mailTo" class="form-control"
+                        [(ngModel)]="mailTo" placeholder="Nombre de Usuario o Email" required>
+                </div>
+               
+                <div class="form-group">
+                    <button class="btn btn-outline-success btn-block" [disabled]="!f.valid" type="submit">
+                        <i class="fas fa-sign-in-alt"></i> Enviar Correo</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>-->
+

@@ -1,0 +1,109 @@
+<app-menu></app-menu>
+
+
+  <head>
+  	<title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="/login.component.css">
+
+	</head>
+	<body class="img js-fullheight vh-100">
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Login</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-4">
+					<div class="login-wrap p-0">
+		      	<h3 class="mb-4 text-center">¿Tienes una cuenta?</h3>
+		      	<form class="signin-form" #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+		      		<div class="form-group">
+		      			<input type="text" class="form-control" placeholder="Nombre de Usuario" name="nombreUsuario" id="nombreUsuario" required [(ngModel)]="nombreUsuario">
+		      		</div>
+	            <div class="form-group">
+	              <input type="password" class="form-control" name="password" placeholder="Contraseña" id="password" [(ngModel)]="password" required>
+	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+	            </div>
+	            <div class="form-group">
+	            	<button type="submit" class="form-control btn btn-primary submit px-3">Ingresa</button>
+	            </div>
+	          </form>
+            <div class="form-group d-md-flex">
+              <div class="w-50">
+                <label class="checkbox-wrap checkbox-primary">Recordar
+                  <input type="checkbox" checked>
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="w-50 text-md-right">
+                <a href="#" style="color: #fff" routerLink="/sendemail">¿Olvidaste tu contraseña?</a>
+              </div>
+            </div>
+	          <p class="w-100 text-center">&mdash; O &mdash;</p>
+	          <div class="social d-flex text-center">
+	          	<a href="#" class="px-2 py-2 mr-md-1 rounded" routerLink="/registro"><span class="ion-logo-facebook mr-2" ></span> Regístrate</a>
+	          </div>
+		      </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+  <script src="/src/js/jquery.min.js"></script>
+  <script src="/src/js/main.js"></script>
+  <script src="/src/js/bootstrap.min.js"></script>
+  <script src="/src/js/popper.js"></script>
+
+	</body>
+
+
+
+
+
+
+<!--<body>
+    <div class="container d-flex justify-content-center align-items-center vh-100 ">
+      <div class="card">
+        <div class="card-header" required>
+          <ul class="nav nav-tabs" required>
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="/login" required>Iniciar Sesión</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/registro">Crear Cuenta</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/sendemail">Olvidé mi Contraseña</a>
+            </li>
+          </ul>
+        </div>
+
+
+        <div class="card-body" required>
+          <form #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+            <div class="form-group" required>
+              <label for="nombreUsuario">Nombre de Usuario</label>
+              <input required type="text" name="nombreUsuario" id="nombreUsuario" class="form-control" [(ngModel)]="nombreUsuario">
+            </div>
+            <div class="form-group">
+              <label for="password">Contraseña</label>
+              <input type="password" name="password" id="password" class="form-control" [(ngModel)]="password" required>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-outline-success btn-block" [disabled]="!f.valid" type="submit">
+                <i class="fas fa-sign-in-alt"></i> Iniciar Sesión</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>-->
