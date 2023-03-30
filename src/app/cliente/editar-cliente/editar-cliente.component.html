@@ -19,6 +19,11 @@
                 <div class="col-md-4 mx-auto">
                     <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
                         <div class="form-group">
+                            <label for="nombre">DNI</label>
+                            <input type="text" class="form-control" id="dni" name="dni"
+                            [(ngModel)]="cliente.dni" required>
+                        </div>
+                        <div class="form-group">
                             <label for="nombre">Nombre</label>
                             <input type="text" class="form-control" id="nombre" name="nombre"
                             [(ngModel)]="cliente.nombre" required>
@@ -33,13 +38,13 @@
                             <input type="text" class="form-control" id="direccion" name="direccion"
                             [(ngModel)]="cliente.direccion" required>
                         </div>
-                        <div class="form-group">
+                       <!-- <div class="form-group">
                             <label for="telefono">Teléfono</label>
                             <input type="text" class="form-control" id="telefono" name="telefono"
                             [(ngModel)]="cliente.telefono" required>
-                        </div>
+                        </div>-->
     
-                      <div class="form-group">
+                      <!--<div class="form-group">
                             <label for="plan">Plan Postpago</label>
                             <select class="form-select"  id="plan" name="plan" [(ngModel)]="planPostpago2" (change)="actualizarPlanPostpago()" required>
                                 <option *ngFor="let plan of planesPostpago" [ngValue]="plan.planId" [selected]="plan.planId == planPostpago.planId">
@@ -54,7 +59,7 @@
                                     {{tipo.nombre}}
                                 </option>
                             </select>
-                        </div>
+                        </div>-->
                         <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
                             <i class="fas fa-pencil-alt"></i> Actualizar</button>
                         <button class="btn btn-outline-primary btn-block" routerLink="/lista">

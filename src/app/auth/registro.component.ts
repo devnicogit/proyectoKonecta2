@@ -4,6 +4,7 @@ import { AuthService } from '../service/auth.service';
 import { Router } from '@angular/router';
 import { NuevoUsuario } from '../models/nuevo-usuario';
 import { ToastrService } from 'ngx-toastr';
+import { Asesor } from '../models/asesor';
 
 @Component({
   selector: 'app-registro',
@@ -12,8 +13,9 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class RegistroComponent implements OnInit {
 
-  nuevoUsuario: NuevoUsuario;
+  asesor: Asesor;
   nombre: string;
+  apellido: string;
   nombreUsuario: string;
   email: string;
   password: string;
@@ -30,8 +32,8 @@ export class RegistroComponent implements OnInit {
   }
 
   onRegister(): void {
-    this.nuevoUsuario = new NuevoUsuario(this.nombre, this.nombreUsuario, this.email, this.password);
-    this.authService.nuevo(this.nuevoUsuario).subscribe(
+    this.asesor = new Asesor(this.nombre,this.apellido, this.nombreUsuario, this.email, this.password);
+    this.authService.nuevo(this.asesor).subscribe(
       data => {
         this.toastr.success('Cuenta Creada', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'

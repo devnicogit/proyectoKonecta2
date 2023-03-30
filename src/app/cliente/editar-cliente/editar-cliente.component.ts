@@ -17,6 +17,7 @@ export class EditarClienteComponent implements OnInit {
 
 
   cliente : Cliente;
+  dni: string = '';
   nombre: string = '';
   apellido: string = '';
   direccion: string = '';
@@ -45,15 +46,16 @@ export class EditarClienteComponent implements OnInit {
     this.clienteService.detail(id).subscribe(
       data => {
         this.cliente = data;
+        this.dni = this.cliente.dni;
         this.nombre = this.cliente.nombre;
         this.apellido = this.cliente.apellido;
         this.direccion = this.cliente.direccion;
-        this.telefono = this.cliente.telefono;
-        this.planPostpago = this.cliente.planPostpago;
-        this.planPostpago2 = this.cliente.planPostpago.planId;
+        // este-->this.telefono = this.cliente.telefono;
+        // este-->this.planPostpago = this.cliente.planPostpago;
+        // este-->this.planPostpago2 = this.cliente.planPostpago.planId;
         //this.planPostpago2 = this.cliente.planPostpago && this.cliente.planPostpago.planId;
-        this.tipoCliente = this.cliente.tipoCliente;
-        this.tipoCliente2 = this.cliente.tipoCliente.tipoId;
+        // este -->this.tipoCliente = this.cliente.tipoCliente;
+        // este -->this.tipoCliente2 = this.cliente.tipoCliente.tipoId;
         //this.tipoCliente2 = this.cliente.tipoCliente && this.cliente.tipoCliente.tipoId;
 
       },
@@ -94,7 +96,7 @@ export class EditarClienteComponent implements OnInit {
 
   
   // método para actualizar la propiedad tipoCliente del objeto cliente
-  actualizarTipoCliente(){
+  /*actualizarTipoCliente(){
     if (this.tiposCliente) {
       const tipoSeleccionado = this.tiposCliente.find(tipo => tipo.tipoId === this.tipoCliente2);
       if (tipoSeleccionado) {
@@ -103,9 +105,9 @@ export class EditarClienteComponent implements OnInit {
         this.tipoCliente = null;
       }
     }
-  }
+  }*/
 
-  actualizarPlanPostpago() {
+  /*actualizarPlanPostpago() {
     if (this.planesPostpago) {
       const planSeleccionado = this.planesPostpago.find(plan => plan.planId === this.planPostpago2);
       if (planSeleccionado) {
@@ -114,15 +116,15 @@ export class EditarClienteComponent implements OnInit {
         this.planPostpago = null;
       }
     }
-  }
+  }*/
 
 
-  actualizarCliente(){
+  /*actualizarCliente(){
     this.actualizarTipoCliente();
     this.actualizarPlanPostpago();
     this.cliente.tipoCliente = this.tipoCliente;
     this.cliente.planPostpago = this.planPostpago;
-  }
+  }*/
 
   onUpdate(): void {
     /*console.log('cliente antes de actualizar:', this.cliente);
@@ -131,14 +133,16 @@ export class EditarClienteComponent implements OnInit {
     this.actualizarTipoCliente();
     this.actualizarPlanPostpago();
     console.log('cliente después de actualizar:', this.cliente);*/
-    this.actualizarCliente();
+    //this.actualizarCliente();
     const clienteActualizado = new Cliente(
+      this.cliente.dni,
       this.cliente.nombre,
       this.cliente.apellido,
-      this.cliente.direccion,
-      this.cliente.telefono,
+      this.cliente.direccion
+      /*this.cliente.telefono,
       this.planPostpago,
-      this.tipoCliente)
+      this.tipoCliente*/
+      )
     //this.actualizarCliente();
     const id = this.activatedRoute.snapshot.params.id;
     this.clienteService.update(id, clienteActualizado).subscribe(

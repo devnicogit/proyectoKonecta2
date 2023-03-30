@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { LoginUsuario } from '../models/login-usuario';
 import { JwtDTO } from '../models/jwt-dto';
 import { environment } from './../../environments/environment';
+import { Asesor } from '../models/asesor';
 
 @Injectable({
   providedIn: 'root'
@@ -15,13 +16,22 @@ export class AuthService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public nuevo(nuevoUsuario: NuevoUsuario): Observable<any> {
+  /*public nuevo(nuevoUsuario: NuevoUsuario): Observable<any> {
     return this.httpClient.post<any>(this.authURL + 'nuevo', nuevoUsuario);
   }
 
   public login(loginUsuario: LoginUsuario): Observable<JwtDTO> {
     return this.httpClient.post<JwtDTO>(this.authURL + 'login', loginUsuario);
+  }*/
+
+  public nuevo(asesor: Asesor): Observable<any> {
+    return this.httpClient.post<any>(this.authURL + 'nuevo', asesor);
   }
+
+  public login(loginUsuario: LoginUsuario): Observable<JwtDTO> {
+    return this.httpClient.post<JwtDTO>(this.authURL + 'login', loginUsuario);
+  }
+
 
   public refresh(dto: JwtDTO): Observable<JwtDTO> {
     return this.httpClient.post<JwtDTO>(this.authURL + 'refresh', dto);

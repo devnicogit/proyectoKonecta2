@@ -17,7 +17,12 @@
         <div class="container">
             <div class="row mt-5">
                 <div class="col-md-4 mx-auto">
-                    <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                    <form (ngSubmit)="onCreate()" novalidate #f="ngForm">.
+                        <div class="form-group">
+                            <label for="nombre">DNI</label>
+                            <input type="text" class="form-control" id="dni" name="dni"
+                            [(ngModel)]="dni" required>
+                        </div>
                         <div class="form-group">
                             <label for="nombre">Nombre</label>
                             <input type="text" class="form-control" id="nombre" name="nombre"
@@ -33,13 +38,13 @@
                             <input type="text" class="form-control" id="direccion" name="direccion"
                             [(ngModel)]="direccion" required>
                         </div>
-                        <div class="form-group">
+                        <!--<div class="form-group">
                             <label for="telefono">Teléfono</label>
                             <input type="text" class="form-control" id="telefono" name="telefono"
                             [(ngModel)]="telefono" required>
-                        </div>
+                        </div>-->
 
-                        <div class="form-group">
+                        <!--<div class="form-group">
                             <label for="plan">Plan Postpago</label>
                             <select class="form-select"  id="plan" name="plan" [(ngModel)]="planPostpago" required>
                                 <option *ngFor="let plan of planesPostpago" [value]="plan.planId">
@@ -54,7 +59,7 @@
                                     {{tipo.nombre}}
                                 </option>
                             </select>
-                        </div>
+                        </div>-->
                         <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
                             <i class="fas fa-plus-circle"></i> Crear</button>
                         <button class="btn btn-outline-primary btn-block" routerLink="/lista">

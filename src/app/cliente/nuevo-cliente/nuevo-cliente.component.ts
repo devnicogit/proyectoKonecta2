@@ -17,6 +17,7 @@ import { TipoClienteService } from 'src/app/service/tipoCliente.service';
 export class NuevoClienteComponent implements OnInit {
 
   cliente : Cliente;
+  dni: string = '';
   nombre: string = '';
   apellido: string = '';
   direccion: string = '';
@@ -42,7 +43,7 @@ export class NuevoClienteComponent implements OnInit {
 
   ngOnInit() {
 
-    this.planPostpagoService.lista().subscribe(
+    /*this.planPostpagoService.lista().subscribe(
       data =>{
         this.planesPostpago = data;
       },
@@ -54,12 +55,12 @@ export class NuevoClienteComponent implements OnInit {
         this.tiposCliente = data1;
       },
       error => console.error(error)
-    );
+    );*/
 
   }
 
   onCreate(): void {
-    this.cliente = new Cliente(this.nombre,this.apellido, this.direccion, this.telefono, this.planPostpago, this.tipoCliente);
+    this.cliente = new Cliente(this.dni,this.nombre,this.apellido, this.direccion);
     /*this.cliente = new Cliente(this.nombre, this.apellido, this.direccion, this.telefono,this.planPostpago,this.tipoCliente);*/
     this.clienteService.save(this.cliente).subscribe(
       data => {
