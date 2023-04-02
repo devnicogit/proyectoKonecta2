@@ -1,3 +1,5 @@
+import { Rol } from "./rol";
+
 export class Asesor {
     id?:number;
     nombre: string;
@@ -5,6 +7,7 @@ export class Asesor {
     nombreUsuario: string;
     email: string;
     password: string;
+    roles: Rol[];
     constructor(nombre: string, apellido: string, nombreUsuario: string, email: string, password: string) {
         this.nombre = nombre;
         this.apellido = apellido;

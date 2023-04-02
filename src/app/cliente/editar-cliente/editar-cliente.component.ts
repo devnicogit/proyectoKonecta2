@@ -26,6 +26,7 @@ export class EditarClienteComponent implements OnInit {
   planPostpago: PlanPostpago;
   tipoCliente2 : number;
   planPostpago2:number;
+  tipoClienteIds: number[] = [];
 
   planesPostpago: PlanPostpago[];
   tiposCliente: TipoCliente[];
@@ -40,6 +41,7 @@ export class EditarClienteComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    
 
 
     const id = this.activatedRoute.snapshot.params.id;
@@ -126,6 +128,10 @@ export class EditarClienteComponent implements OnInit {
     this.cliente.planPostpago = this.planPostpago;
   }*/
 
+  onTipoClienteChange(event) {
+    this.tipoClienteIds = [event.target.value];
+  }
+
   onUpdate(): void {
     /*console.log('cliente antes de actualizar:', this.cliente);
     console.log('tipoCliente2:', this.tipoCliente2);
@@ -138,7 +144,8 @@ export class EditarClienteComponent implements OnInit {
       this.cliente.dni,
       this.cliente.nombre,
       this.cliente.apellido,
-      this.cliente.direccion
+      this.cliente.direccion,
+      this.cliente.tipoClienteIds
       /*this.cliente.telefono,
       this.planPostpago,
       this.tipoCliente*/

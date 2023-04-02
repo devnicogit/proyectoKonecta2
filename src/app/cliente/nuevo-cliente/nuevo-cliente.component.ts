@@ -27,6 +27,8 @@ export class NuevoClienteComponent implements OnInit {
   tipoCliente2 : number;
   planPostpago2:number;
 
+  tipoClienteIds: number[] = [];
+
   planesPostpago: PlanPostpago[];
   tiposCliente: TipoCliente[];
 
@@ -42,6 +44,16 @@ export class NuevoClienteComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+
+        // Obtener la lista de tipos de cliente al inicializar el componente
+        this.tipoClienteService.lista().subscribe(
+          data => {
+            this.tiposCliente = data;
+          },
+          err => {
+            console.log(err);
+          }
+        );
 
     /*this.planPostpagoService.lista().subscribe(
       data =>{
@@ -59,10 +71,21 @@ export class NuevoClienteComponent implements OnInit {
 
   }
 
+  onTipoClienteChange(event) {
+    this.tipoClienteIds = [event.target.value];
+  }
+
   onCreate(): void {
-    this.cliente = new Cliente(this.dni,this.nombre,this.apellido, this.direccion);
+    const cliente: Cliente = {
+      dni: this.dni,
+      nombre: this.nombre,
+      apellido: this.apellido,
+      direccion: this.direccion,
+      tipoClienteIds: this.tipoClienteIds
+    };
+    //this.cliente = new Cliente(this.dni,this.nombre,this.apellido, this.direccion, this.tipoCliente2);
     /*this.cliente = new Cliente(this.nombre, this.apellido, this.direccion, this.telefono,this.planPostpago,this.tipoCliente);*/
-    this.clienteService.save(this.cliente).subscribe(
+    this.clienteService.save(cliente).subscribe(
       data => {
         this.toastr.success('Cliente Creado', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'

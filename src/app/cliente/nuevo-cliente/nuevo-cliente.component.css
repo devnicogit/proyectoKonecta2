@@ -67,6 +67,11 @@ body {
   margin-top: -24px;
 }
 
+select option {
+  color: #000;
+}
+  
+
 [tabindex="-1"]:focus {
   outline: 0 !important; }
 

@@ -39,10 +39,17 @@
 
               <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" [(ngModel)]="password" required>
             </div>
-
             <div class="form-group">
               <input type="text" name="email" id="email" class="form-control" placeholder="Correo Electrónico" [(ngModel)]="email" required>
             </div>
+
+            <div class="form-group">
+              <select name="roles" id="roles" class="form-control" placeholder="Rol" [(ngModel)]="selectedRole" required>
+                <option value="" selected disabled>Seleccionar Rol</option>
+                <option *ngFor="let rol of roles" [value]="rol.id">{{rol.rolNombre}}</option>
+              </select>
+            </div>
+
             <div class="form-group">
               <button type="submit" class="form-control btn btn-primary submit px-3" [disabled]="!f.valid">Crear Cuenta</button>
             </div>

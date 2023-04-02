@@ -10,6 +10,7 @@ export const environment = {
   planPostpagoURL: 'http://localhost:8080/planpostpago/',
   tipoClienteURL: 'http://localhost:8080/tipocliente/',
   authURL: 'http://localhost:8080/auth/',
+  rolURL: 'http://localhost:8080/auth/roles',
   changePasswordURL: 'http://localhost:8080/email-password/'
 };
 

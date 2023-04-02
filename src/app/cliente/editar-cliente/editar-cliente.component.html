@@ -60,6 +60,12 @@
                                 </option>
                             </select>
                         </div>-->
+                        <div class="form-group">
+                            <label for="tipoCliente">Tipo de Cliente</label>
+                            <select class="form-control" id="tipoCliente" name="tipoClienteIds" [(ngModel)]="tipoClienteIds" (change)="onTipoClienteChange($event)" required>
+                              <option *ngFor="let tipo of tiposCliente" [value]="tipo.tipoId">{{ tipo.nombre }}</option>
+                            </select>
+                        </div>
                         <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
                             <i class="fas fa-pencil-alt"></i> Actualizar</button>
                         <button class="btn btn-outline-primary btn-block" routerLink="/lista">

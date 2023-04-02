@@ -62,6 +62,10 @@
     background-image: url('C:/Users/nicol/Desktop/FRONTED_PROYECTO/src/assets/img/bg.jpg');
     margin-top: -24px;
  }
+
+ select option {
+  color: #000;
+}
   
   [tabindex="-1"]:focus {
     outline: 0 !important; }
