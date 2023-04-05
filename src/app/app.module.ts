@@ -30,6 +30,10 @@ import { ListaClienteComponent } from './cliente/lista-cliente/lista-cliente.com
 import { DetalleClienteComponent } from './cliente/detalle-cliente/detalle-cliente.component';
 import { NuevoClienteComponent } from './cliente/nuevo-cliente/nuevo-cliente.component';
 import { EditarClienteComponent } from './cliente/editar-cliente/editar-cliente.component';
+import { DetalleTelefonoComponent } from './telefono/detalle-telefono/detalle-telefono.component';
+import { EditarTelefonoComponent } from './telefono/editar-telefono/editar-telefono.component';
+import { ListaTelefonoComponent } from './telefono/lista-telefono/lista-telefono.component';
+import { NuevoTelefonoComponent } from './telefono/nuevo-telefono/nuevo-telefono.component';
 
 
 
@@ -56,7 +60,11 @@ import { EditarClienteComponent } from './cliente/editar-cliente/editar-cliente.
     ListaClienteComponent,
     DetalleClienteComponent,
     NuevoClienteComponent,
-    EditarClienteComponent
+    EditarClienteComponent,
+    DetalleTelefonoComponent,
+    EditarTelefonoComponent,
+    ListaTelefonoComponent,
+    NuevoTelefonoComponent
   ],
   imports: [
     BrowserModule,

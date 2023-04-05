@@ -21,6 +21,10 @@ import { ListaClienteComponent } from './cliente/lista-cliente/lista-cliente.com
 import { DetalleClienteComponent } from './cliente/detalle-cliente/detalle-cliente.component';
 import { NuevoClienteComponent } from './cliente/nuevo-cliente/nuevo-cliente.component';
 import { EditarClienteComponent } from './cliente/editar-cliente/editar-cliente.component';
+import { ListaTelefonoComponent } from './telefono/lista-telefono/lista-telefono.component';
+import { DetalleTelefonoComponent } from './telefono/detalle-telefono/detalle-telefono.component';
+import { EditarTelefonoComponent } from './telefono/editar-telefono/editar-telefono.component';
+import { NuevoTelefonoComponent } from './telefono/nuevo-telefono/nuevo-telefono.component';
 
 
 
@@ -44,6 +48,10 @@ const routes: Routes = [
   { path: 'detalle/:id', component: DetalleClienteComponent, canActivate:[ProdGuardService], data:{expectedRol:['admin', 'user']}},
   { path: 'nuevo', component: NuevoClienteComponent, canActivate: [ProdGuardService], data : {expectedRol: ['admin']}},
   { path: 'editar/:id', component: EditarClienteComponent, canActivate: [ProdGuardService], data : {expectedRol: ['admin']}},
+  { path: 'listaTelefono', component: ListaTelefonoComponent, canActivate: [ProdGuardService], data: { expectedRol: ['admin', 'user'] } },
+  { path: 'detallePedido/:id', component: DetalleTelefonoComponent, canActivate:[ProdGuardService], data:{expectedRol:['admin', 'user']}},
+  { path: 'editarTelefono/:id', component: EditarTelefonoComponent, canActivate: [ProdGuardService], data : {expectedRol: ['admin']}},
+  { path: 'nuevoTelefono', component: NuevoTelefonoComponent, canActivate: [ProdGuardService], data : {expectedRol: ['admin']}},
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

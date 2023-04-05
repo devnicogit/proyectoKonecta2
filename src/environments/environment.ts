@@ -11,6 +11,7 @@ export const environment = {
   tipoClienteURL: 'http://localhost:8080/tipocliente/',
   authURL: 'http://localhost:8080/auth/',
   rolURL: 'http://localhost:8080/auth/roles',
+  telefonoURL: 'http://localhost:8080/telefono/',
   changePasswordURL: 'http://localhost:8080/email-password/'
 };
 
