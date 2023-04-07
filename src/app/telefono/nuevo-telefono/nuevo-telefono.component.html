@@ -1,1 +1,52 @@
-<p>nuevo-telefono works!</p>
+<app-menu></app-menu>
+<head>
+    <title>Ingresar Teléfonos</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <link rel="stylesheet" href="/nuevo-telefono.component.css">
+  
+  </head>
+<body class="img js-fullheight vh-100">
+    <section class="ftco-section">
+        <h2 class="text-center">Registrar Teléfono</h2>
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-md-4 mx-auto">
+                    <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                        <div class="form-group">
+                            <label for="numero">Número</label>
+                            <input type="text" class="form-control" id="numero" name="numero"
+                            [(ngModel)]="numero" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="plan">Plan Postpago</label>
+                          <select class="form-control"  id="plan" name="plan" [(ngModel)]="planPostpago" required>
+                              <option *ngFor="let plan of planesPostpago" [value]="plan.planId">
+                                  {{plan.nombrePlan}}
+                              </option>
+                          </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="plan">Cliente</label>
+                        <select class="form-control"  id="cliente" name="cliente" [(ngModel)]="cliente" required>
+                            <option *ngFor="let cliente of clientes" [value]="cliente.clienteId">
+                                {{cliente.nombre}}
+                            </option>
+                        </select>
+                      </div>
+                        <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+                            <i class="fas fa-plus-circle"></i> Crear</button>
+                        <button class="btn btn-outline-primary btn-block" routerLink="/listaTelefono">
+                            <i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+

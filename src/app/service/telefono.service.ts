@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { Telefono } from "../models/telefono";
 import { environment } from "src/environments/environment";
+import { TelefonoDTO } from "../models/telefono-dto";
 
 @Injectable({
     providedIn: 'root'
