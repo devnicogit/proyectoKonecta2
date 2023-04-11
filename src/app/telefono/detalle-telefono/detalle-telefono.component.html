@@ -1,1 +1,38 @@
-<p>detalle-telefono works!</p>
+<app-menu></app-menu>
+<head>
+    <title>Listado de Teléfonos</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <link rel="stylesheet" href="/detalle-cliente.component.css">
+  
+  </head>
+  <body class="img js-fullheight vh-100">
+  <section class="ftco-section">
+<div class="container">
+    <div class="row mt-5" *ngIf="telefono" >
+      <div class="col-md-4 mx-auto ">
+          <div class="card text-bg-dark mb-3" style="width: 18rem;">
+              <div class="card-header text-center">
+                Detalle
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item text-bg-dark mb-3"><b>ID: </b>{{telefono.id}}</li>
+                <li class="list-group-item text-bg-dark mb-3"><b>Número: </b>{{telefono.numero}}</li>
+                <li class="list-group-item text-bg-dark mb-3"><b>Plan Postpago: </b>{{nombrePlan}}</li>
+                <li class="list-group-item text-bg-dark mb-3"><b>Cliente: </b>{{nombre}}</li>
+              </ul>
+              <div class="card-footer">
+                  <button class="btn btn-outline-primary btn-block" (click)="volver()"><i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+              </div>
+            </div>
+            
+      </div>
+  </div>
+  </div>
+  </section>
+  </body>

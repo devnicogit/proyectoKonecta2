@@ -24,6 +24,14 @@ export class AuthService {
     return this.httpClient.post<JwtDTO>(this.authURL + 'login', loginUsuario);
   }*/
 
+  public lista():Observable<Asesor[]>{
+    return this.httpClient.get<Asesor[]>(this.authURL + 'asesores');
+  }
+
+  public nombre(nombreUsuario: string): Observable<Asesor>{
+    return this.httpClient.get<Asesor>(this.authURL + `asesores/${nombreUsuario}`);
+  }
+
   public nuevo(asesor: Asesor): Observable<any> {
     return this.httpClient.post<any>(this.authURL + 'nuevo', asesor);
   }

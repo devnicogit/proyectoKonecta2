@@ -34,6 +34,8 @@ const routes: Routes = [
   { path: 'registro', component: RegistroComponent, canActivate: [LoginGuard] },
   { path: 'sendemail', component: SendEmailComponent, canActivate: [LoginGuard] },
   { path: 'change-password/:tokenPassword', component: ChangePasswordComponent, canActivate: [LoginGuard] },
+  { path: 'asesores', component: MigracionComponent, canActivate:[LoginGuard]},
+  { path: 'asesores/:nombreUsuario',component:MigracionComponent, canActivate:[LoginGuard]},
   /*{ path: 'lista', component: ListaProductoComponent, canActivate: [ProdGuardService], data: { expectedRol: ['admin', 'user'] } },*/
   /*{ path: 'detalle/:id', component: DetalleProductoComponent, canActivate: [ProdGuardService], data: { expectedRol: ['admin', 'user'] } },
   { path: 'nuevo', component: NuevoProductoComponent, canActivate: [ProdGuardService], data: { expectedRol: ['admin'] } },
@@ -49,9 +51,10 @@ const routes: Routes = [
   { path: 'nuevo', component: NuevoClienteComponent, canActivate: [ProdGuardService], data : {expectedRol: ['admin']}},
   { path: 'editar/:id', component: EditarClienteComponent, canActivate: [ProdGuardService], data : {expectedRol: ['admin']}},
   { path: 'listaTelefono', component: ListaTelefonoComponent, canActivate: [ProdGuardService], data: { expectedRol: ['admin', 'user'] } },
-  { path: 'detallePedido/:id', component: DetalleTelefonoComponent, canActivate:[ProdGuardService], data:{expectedRol:['admin', 'user']}},
+  { path: 'detalleTelefono/:id', component: DetalleTelefonoComponent, canActivate:[ProdGuardService], data:{expectedRol:['admin', 'user']}},
   { path: 'editarTelefono/:id', component: EditarTelefonoComponent, canActivate: [ProdGuardService], data : {expectedRol: ['admin']}},
   { path: 'nuevoTelefono', component: NuevoTelefonoComponent, canActivate: [ProdGuardService], data : {expectedRol: ['admin']}},
+  { path: 'ordenMigracion/:id', component: MigracionComponent, canActivate: [ProdGuardService], data: {expectedRol: ['admin']}},
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

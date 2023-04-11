@@ -6,6 +6,9 @@ export class Telefono {
     numero: string;
     planPostpago: PlanPostpago;
     cliente: Cliente;
+    plan: any;
+    cliente3: any;
+
 
     constructor(numero: string, planPostpago: PlanPostpago, cliente:Cliente) {
         this.numero = numero;

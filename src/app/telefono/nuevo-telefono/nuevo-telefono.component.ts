@@ -24,6 +24,7 @@ export class NuevoTelefonoComponent implements OnInit {
   clientes: Cliente[] = [];*/
 
   telefono: Telefono;
+  telefonos: Telefono[];
   numero: string = '';
   planPostpago: PlanPostpago;
   cliente: Cliente;
@@ -48,6 +49,18 @@ export class NuevoTelefonoComponent implements OnInit {
     );
   }
 
+  cargarTelefonos() {
+    this.telefonoService.lista().subscribe(
+      telefonos => {
+        this.telefonos = telefonos;
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
+
+
   onCreate(): void {
 
    /* // Busca el planPostpago y el cliente correspondiente a los IDs recibidos
@@ -64,6 +77,7 @@ export class NuevoTelefonoComponent implements OnInit {
               timeOut: 3000, positionClass: 'toast-top-center'
             });
             this.router.navigate(['/listaTelefono']);
+            this.cargarTelefonos();
           },
           err => {
             this.toastr.error(err.error.mensaje, 'Fail', {

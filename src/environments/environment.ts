@@ -12,6 +12,7 @@ export const environment = {
   authURL: 'http://localhost:8080/auth/',
   rolURL: 'http://localhost:8080/auth/roles',
   telefonoURL: 'http://localhost:8080/telefono/',
+  ordenURL: 'http://localhost:8080/ordenmigracion/',
   changePasswordURL: 'http://localhost:8080/email-password/'
 };
 

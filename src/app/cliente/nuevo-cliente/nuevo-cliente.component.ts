@@ -17,6 +17,7 @@ import { TipoClienteService } from 'src/app/service/tipoCliente.service';
 export class NuevoClienteComponent implements OnInit {
 
   cliente : Cliente;
+  clientes: Cliente[]; 
   dni: string = '';
   nombre: string = '';
   apellido: string = '';
@@ -71,6 +72,17 @@ export class NuevoClienteComponent implements OnInit {
 
   }
 
+  cargarClientes() {
+    this.clienteService.lista().subscribe(
+      clientes => {
+        this.clientes = clientes;
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
+
   onTipoClienteChange(event) {
     this.tipoClienteIds = [event.target.value];
   }
@@ -91,6 +103,7 @@ export class NuevoClienteComponent implements OnInit {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
         this.router.navigate(['/lista']);
+        this.cargarClientes();
       },
       err => {
         this.toastr.error(err.error.mensaje, 'Fail', {
