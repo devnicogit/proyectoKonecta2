@@ -1,0 +1,60 @@
+<app-menu></app-menu>
+
+<head>
+  <title>Listado de Migraciones</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="/lista-cliente.component.css">
+
+</head>
+<body class="">
+<section class="ftco-section">
+<div class="container">
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Asesor ID</th>
+        <th scope="col">Plan ID</th>
+        <th scope="col">Telefono ID</th>
+        <!--<th scope="col">Teléfono</th>
+        <th scope="col">Plan PostPago</th>
+        <th scope="col">Tipo Cliente</th>-->
+        <th scope="col" *ngIf="isAdmin">Ver</th>
+        <th scope="col" *ngIf="isAdmin">Editar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let orden of ordenes">
+        <td>{{orden.id}}</td>
+        <td>{{orden.fecha}}</td>
+        <td>{{orden.asesor.id}}</td>
+        <td>{{orden.plan.planId}}</td>
+        <td>{{orden.telefono.id}}</td>
+       <!-- <td>{{cliente.telefono}}</td>
+        <td>{{cliente.planPostpago.nombrePlan}}</td>
+        <td>{{cliente.tipoCliente.nombre}}</td>-->
+
+        <td><button class="btn btn-outline-primary"><i class="far fa-eye"></i> Ver</button></td>
+        <td *ngIf="isAdmin"><button class="btn btn-outline-warning"><i class="far fa-edit"></i> Editar</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="mt-3" *ngIf="isAdmin">
+    <button class="btn btn-outline-success btn-lg" routerLink="/nuevoTelefono">
+      <i class="fas fa-plus-circle"></i> Nueva Orden Migración</button>
+  </div>
+
+</div>
+</section>
+<script src="/src/js/jquery.min.js"></script>
+<script src="/src/js/main.js"></script>
+<script src="/src/js/bootstrap.min.js"></script>
+<script src="/src/js/popper.js"></script>
+</body>

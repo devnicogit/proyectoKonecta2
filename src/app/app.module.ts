@@ -34,6 +34,7 @@ import { DetalleTelefonoComponent } from './telefono/detalle-telefono/detalle-te
 import { EditarTelefonoComponent } from './telefono/editar-telefono/editar-telefono.component';
 import { ListaTelefonoComponent } from './telefono/lista-telefono/lista-telefono.component';
 import { NuevoTelefonoComponent } from './telefono/nuevo-telefono/nuevo-telefono.component';
+import { ListaMigracionComponent } from './migracion/lista-migracion/lista-migracion.component';
 
 
 
@@ -64,7 +65,8 @@ import { NuevoTelefonoComponent } from './telefono/nuevo-telefono/nuevo-telefono
     DetalleTelefonoComponent,
     EditarTelefonoComponent,
     ListaTelefonoComponent,
-    NuevoTelefonoComponent
+    NuevoTelefonoComponent,
+    ListaMigracionComponent
   ],
   imports: [
     BrowserModule,

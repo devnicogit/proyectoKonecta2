@@ -17,46 +17,6 @@
   <section class="ftco-section">
 <h2>Teléfono: {{telefono.numero}} -- Nombre Cliente: {{telefono.cliente.nombre}}</h2>
 
-<!-- <div class="row">
-    <div class="col-sm-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">{{plan.nombre}}</h5>
-          <p class="card-text">Descripción del plan</p>
-          <a href="#" class="btn btn-primary">SELECCIONAR</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">MOVISTAR 5GB</h5>
-          <p class="card-text">Descripción del plan</p>
-          <a href="#" class="btn btn-primary">SELECCIONAR</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-3">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">MOVISTAR 7GB</h5>
-            <p class="card-text">Descripción del plan</p>
-            <a href="#" class="btn btn-primary">SELECCIONAR</a>
-          </div>
-        </div>
-    </div>
-    <div class="col-sm-3">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">MOVISTAR 10GB</h5>
-            <p class="card-text">Descripción del plan</p>
-            <a href="#" class="btn btn-primary">SELECCIONAR</a>
-          </div>
-        </div>
-    </div> 
-
-    
-</div>-->
 
 <div class="row">
   <div class="col-sm-3" *ngFor="let plan of planesPos">
@@ -64,7 +24,7 @@
       <div class="card-body">
         <h5 class="card-title">{{plan.nombrePlan}}</h5>
         <p class="card-text">Costo Mensual: S/. {{plan.costoMensual}}</p>
-        <a href="#" class="btn btn-primary">SELECCIONAR</a>
+        <a href="#" class="btn btn-primary" (click)="seleccionarPlan(plan, $event)">SELECCIONAR</a>
       </div>
     </div>
   </div>
@@ -74,39 +34,24 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-2">
-            <h6>Seleccionar detalle del plan</h6>
-            <div class="custom-control custom-radio">
-                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                <label class="custom-control-label" for="customRadio1">Promoción 1</label>
-              </div>
-              <div class="custom-control custom-radio">
-                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                <label class="custom-control-label" for="customRadio2">Promoción 2</label>
-            </div>
-            <div class="custom-control custom-radio">
-              <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
-              <label class="custom-control-label" for="customRadio3">Promoción 3</label>
-          </div>
-          <div class="custom-control custom-radio">
-            <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
-            <label class="custom-control-label" for="customRadio4">Promoción 4</label>
-        </div>
+      <h6>Seleccionar detalle del plan</h6>
+      <div *ngFor="let detalle of detallesPlan">
         <div class="custom-control custom-radio">
-          <input type="radio" id="customRadio5" name="customRadio" class="custom-control-input">
-          <label class="custom-control-label" for="customRadio5">Promoción 5</label>
-      </div>
-      <div class="custom-control custom-radio">
-        <input type="radio" id="customRadio6" name="customRadio" class="custom-control-input">
-        <label class="custom-control-label" for="customRadio6">Promoción 6</label>
-    </div>
+          <input type="radio" id="{{detalle}}" name="detallePlan" class="custom-control-input" (click)="seleccionarDetallePlan(detalle)">
+          <label class="custom-control-label" for="{{detalle}}">{{detalle}}</label>
         </div>
+      </div>
+    </div>
 		<div class="col">
             <div class="container">
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <label for="input1">Detalle del plan</label>
-                      <textarea name="" id="input1" cols="30" rows="10" class="form-control"></textarea>
+                      <label for="txtDetalle">Detalle del plan</label>
+                      <textarea name="" id="txtDetalle" cols="30" rows="10" class="form-control">
+                 
+                        {{ planSeleccionado?.planId }} - {{ planSeleccionado?.nombrePlan }}
+                      </textarea>
                     </div>
                   </div>
                   <div class="col-md-4">
@@ -114,12 +59,23 @@
                       <label for="nombre">Nombre Usuario del Asesor</label>
                       <input type="text" *ngIf="nombreUsuario" class="form-control" value="{{nombreUsuario}}" readonly>
                     </div>
+
+                    <div class="form-group" hidden>
+                      <label for="userId">ID del Asesor</label>
+                      <input type="text" *ngIf="userId" class="form-control" value="{{userId}}">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="fecha">Fecha</label>
+                      <input type="date" class="form-control" id="fecha" [(ngModel)]="fecha2" required>
+                    </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="numero">Número de Línea</label>
                       <input type="text" class="form-control" id="numero" [(ngModel)]="telefono.numero" required>
                     </div>
+                    
                     <div class="form-group">
                         <button type="button" class="btn btn-primary btn-lg btn-block" (click)="ejecutarExe()"> <i class="fa-solid fa-phone"></i> LLAMAR</button>
                     </div>
@@ -135,7 +91,7 @@
       
     </div>
     <div class="col-1">
-        <button type="button" class="btn btn-success">GENERAR</button>
+        <button type="button" class="btn btn-success" (click)="onCreate()">GENERAR</button>
     </div>
 </div>
 </section>

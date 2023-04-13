@@ -21,6 +21,7 @@
     <div class="container-fluid" style="width: 100%;">
       <h1 *ngIf="!nombreUsuario" class="display-4 text-center">Hola. Inicia Sesión</h1>
       <h1 *ngIf="nombreUsuario" class="display-4 text-center">¡¡Bienvenido, {{nombreUsuario}}!!</h1>
+      <h1 *ngIf="idUsuario" class="display-4 text-center">ID de usuario: {{idUsuario}}</h1>
       <!--<img src="../../assets/img/polleria.png" class="img-fluid" alt="Responsive image">-->
     </div>
 </body>

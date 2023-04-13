@@ -1,5 +1,6 @@
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
+import jwt_decode  from 'jwt-decode';
 
 const TOKEN_KEY = 'AuthToken';
 
@@ -61,4 +62,26 @@ export class TokenService {
     window.localStorage.clear();
     this.router.navigate(['/login']);
   }
+
+  /*public getUserId(): number {
+    if (!this.isLogged()) {
+      return null;
+    }
+    const token = this.getToken();
+    const payload = token.split('.')[1];
+    const payloadDecoded = atob(payload);
+    const values = JSON.parse(payloadDecoded);
+    const userId = values.id;
+    return userId;
+  }*/
+
+  public getUserId(): number {
+    if (!this.isLogged()) {
+      return null;
+    }
+    const token = this.getToken();
+    const decodedToken: DecodedToken = jwt_decode(token);
+    const userId = decodedToken.id;
+    return userId;
+}
 }

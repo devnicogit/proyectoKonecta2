@@ -15,4 +15,6 @@ export class OrdenMigracion {
         this.plan = plan;
         this.fecha = fecha;
     }
+
+    
   }

@@ -25,6 +25,7 @@ import { ListaTelefonoComponent } from './telefono/lista-telefono/lista-telefono
 import { DetalleTelefonoComponent } from './telefono/detalle-telefono/detalle-telefono.component';
 import { EditarTelefonoComponent } from './telefono/editar-telefono/editar-telefono.component';
 import { NuevoTelefonoComponent } from './telefono/nuevo-telefono/nuevo-telefono.component';
+import { ListaMigracionComponent } from './migracion/lista-migracion/lista-migracion.component';
 
 
 
@@ -55,6 +56,8 @@ const routes: Routes = [
   { path: 'editarTelefono/:id', component: EditarTelefonoComponent, canActivate: [ProdGuardService], data : {expectedRol: ['admin']}},
   { path: 'nuevoTelefono', component: NuevoTelefonoComponent, canActivate: [ProdGuardService], data : {expectedRol: ['admin']}},
   { path: 'ordenMigracion/:id', component: MigracionComponent, canActivate: [ProdGuardService], data: {expectedRol: ['admin']}},
+  { path: 'listaOrden', component: ListaMigracionComponent, canActivate: [ProdGuardService], data: {expectedRol: ['admin']}},
+  { path: 'nuevaOrden', component: MigracionComponent, canActivate: [ProdGuardService], data: {expectedRol: ['admin']}},
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

@@ -9,11 +9,13 @@ import { TokenService } from '../service/token.service';
 export class IndexComponent implements OnInit {
 
   nombreUsuario: string;
+  idUsuario: number;
 
   constructor(private tokenService: TokenService) { }
 
   ngOnInit() {
     this.nombreUsuario = this.tokenService.getUserName();
+    this.idUsuario = this.tokenService.getUserId();
   }
 
 }
