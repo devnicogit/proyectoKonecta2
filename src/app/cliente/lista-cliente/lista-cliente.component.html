@@ -28,8 +28,6 @@
         <th scope="col">Tipo Cliente</th>-->
         <th scope="col" *ngIf="isAdmin">Ver</th>
         <th scope="col" *ngIf="isAdmin">Editar</th>
-        <th scope="col" *ngIf="isAdmin">Borrar</th>
-        <th scope="col" *ngIf="isAdmin">Migrar</th>
       </tr>
     </thead>
     <tbody>
@@ -45,8 +43,8 @@
 
         <td><button class="btn btn-outline-primary" routerLink="/detalle/{{cliente.clienteId}}"><i class="far fa-eye"></i> Ver</button></td>
         <td *ngIf="isAdmin"><button class="btn btn-outline-warning" routerLink="/editar/{{cliente.clienteId}}"><i class="far fa-edit"></i> Editar</button></td>
-        <td *ngIf="isAdmin"><button class="btn btn-outline-danger" (click)="borrar(cliente.clienteId)"><i class="far fa-trash-alt"></i> Eliminar</button></td>
-        <td *ngIf="isAdmin"><button class="btn btn-outline-success" (click)="migrar(cliente.id)"><i class="fas fa-phone-volume"></i> Migrar</button></td>
+
+
       </tr>
     </tbody>
   </table>

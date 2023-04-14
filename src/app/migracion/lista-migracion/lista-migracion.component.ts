@@ -29,6 +29,10 @@ export class ListaMigracionComponent implements OnInit {
     this.cargarOrdenes();
   }
 
+  descargarPdf(pdf: string) {
+    window.open(pdf);
+  }
+
   cargarOrdenes() {
     this.ordenMigracionService.lista().subscribe(
     data => {

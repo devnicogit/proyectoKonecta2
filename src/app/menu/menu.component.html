@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-  <a class="navbar-brand" href="#">Proyecto Call Center</a>
+  <a class="navbar-brand" href="#">Sistema Konecta2</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -22,17 +22,15 @@
           <button class="dropdown-item" type="button" routerLink="/lista" *ngIf="isLogged">Clientes</button>
           <button class="dropdown-item" type="button" routerLink="/listaTelefono" *ngIf="isLogged">Teléfonos</button>
           <button class="dropdown-item" type="button" routerLink="/listaOrden" *ngIf="isLogged">Órdenes de Migración</button>
+          <button class="dropdown-item" type="button" routerLink="/listaDetalleOrden" *ngIf="isLogged">Detalle de Órdenes de Migración</button>  
+          
         </div>
       </div>
-      <div class="nav-item" *ngIf="isLogged">
-        <button class="btn btn-primary" type="button" routerLink="/migracion" id="dropdownMenu2" aria-haspopup="true">
-          Migración
-        </button>
-      </div>
 
-      <li class="nav-item" *ngIf="isAdmin">
+
+      <!--<li class="nav-item" *ngIf="isAdmin">
         <a class="nav-link" routerLink="/nuevo"><i class="fas fa-plus-circle"></i> Nuevo</a>
-      </li>
+      </li>-->
       
 
     </ul>

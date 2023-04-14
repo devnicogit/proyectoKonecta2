@@ -21,8 +21,10 @@
     "@angular/router": "~8.0.1",
     "assert": "^2.0.0",
     "child_process": "^1.0.2",
+    "jspdf": "^2.5.1",
     "jwt-decode": "^3.1.2",
     "ngx-toastr": "^11.3.0",
+    "pdfmake": "^0.2.7",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"

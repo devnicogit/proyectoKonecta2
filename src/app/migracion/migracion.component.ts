@@ -14,6 +14,12 @@ import { OrdenMigracion } from '../models/orden-migracion';
 import { ToastrService } from 'ngx-toastr';
 import { DetalleOrdenMigracion } from '../models/detalle-orden-migracion';
 import { OrdenMigracionDto } from '../models/orden-migracion-dto';
+import jsPDF from 'jspdf';
+
+import * as pdfMake from 'pdfmake/build/pdfmake';
+import * as pdfFonts from 'pdfmake/build/vfs_fonts';
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
 /*import { spawn } from 'child_process';*/
 
 
@@ -157,41 +163,68 @@ export class MigracionComponent implements OnInit {
       });
   }
 
+  
 
-      onCreate(): void {
-        
-        /*if (this.telefono) {
-          this.orden.telefono.id = this.telefono.id;
-        } else {
-          console.log('El teléfono es null o undefined');
-          // Puedes tomar otra acción en caso de que el teléfono sea null o undefined
-        }
-      
-        if (this.asesor) {
-          this.orden.asesor.id = this.asesor.id;
-        } else {
-          console.log('El asesor es null o undefined');
-          // Puedes tomar otra acción en caso de que el asesor sea null o undefined
-        }
-      
-        if (this.plan) {
-          this.orden.plan.planId = this.plan.planId;
-        } else {
-          console.log('El plan es null o undefined');
-          // Puedes tomar otra acción en caso de que el plan sea null o undefined
-        }
-      
-        this.orden.fecha = this.fecha;*/
+      onCreate(): void {  
+
+        /*const docDefinition = {
+          content: [
+            { text: 'Hola, este es un PDF generado desde mi aplicación Angular.', fontSize: 16 }
+          ]
+        };*/
+
+
+
+
+        const doc = new jsPDF();
+        doc.text('Hola, este es un PDF generado desde mi aplicación Angular.', 10, 10);
+        const pdfBlob = doc.output('blob');
+        const pdfUrl = URL.createObjectURL(pdfBlob);
+
+
+        //const pdfDataUri = doc.output('datauristring');
+
+       /* const path = require('path'); // Importa el módulo 'path' para construir la ruta del archivo.
+        const fileName = `orden-${this.fechaFormateada}.pdf`;
+        const filePath = path.join(__dirname, '..', 'pdfs', fileName);
+        fs.writeFileSync(filePath, pdfDataUri.split(',')[1], 'base64');*/
 
         const fechaActual = new Date();
         const fechaFormateada = this.datePipe.transform(fechaActual, 'yyyy-MM-dd');
+
+        /*const pdfPath = `pdfs/${fileName}`; // Ruta relativa al archivo PDF*/
+
+
+
+        /*const pdfDocGenerator = pdfMake.createPdf(docDefinition);
+        pdfDocGenerator.getDataUrl((dataUrl: string) => {
+          // Crear el objeto de la orden de migración
+          const ordenMigracion : OrdenMigracionDto = {
+            telefono: this.telefono.id,
+            asesor: this.userId,
+            plan: this.planSeleccionado.planId,
+            fecha: fechaFormateada,
+            pdf: dataUrl
+          };*/
+
+
         // Crear el objeto de la orden de migración
-        const ordenMigracion : OrdenMigracionDto = {
+        /*const ordenMigracion : OrdenMigracionDto = {
           telefono: this.telefono.id,    // Aquí se debe obtener el id del teléfono seleccionado
           asesor: this.userId,
           plan: this.planSeleccionado.planId,
-          fecha: fechaFormateada
-        };
+          fecha: fechaFormateada,
+          pdf: pdfPath
+        };*/
+
+          // Crear el objeto de la orden de migración
+          const ordenMigracion : OrdenMigracionDto = {
+            telefono: this.telefono.id,    // Aquí se debe obtener el id del teléfono seleccionado
+            asesor: this.userId,
+            plan: this.planSeleccionado.planId,
+            fecha: fechaFormateada,
+            pdf: pdfUrl
+          };
       
         this.ordenMigracionService.save(ordenMigracion).subscribe(
           response => {
@@ -205,6 +238,9 @@ export class MigracionComponent implements OnInit {
           }
         );
 
+      }
 }
-}
+
+
+
 

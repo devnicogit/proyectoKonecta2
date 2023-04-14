@@ -27,7 +27,6 @@
         <th scope="col">Tipo Cliente</th>-->
         <th scope="col" *ngIf="isAdmin">Ver</th>
         <th scope="col" *ngIf="isAdmin">Editar</th>
-        <th scope="col" *ngIf="isAdmin">Borrar</th>
         <th scope="col" *ngIf="isAdmin">Migrar</th>
       </tr>
     </thead>
@@ -43,7 +42,6 @@
 
         <td><button class="btn btn-outline-primary" routerLink="/detalleTelefono/{{telefono.id}}"><i class="far fa-eye"></i> Ver</button></td>
         <td *ngIf="isAdmin"><button class="btn btn-outline-warning" routerLink="/editarTelefono/{{telefono.id}}"><i class="far fa-edit"></i> Editar</button></td>
-        <td *ngIf="isAdmin"><button class="btn btn-outline-danger" (click)="borrar(telefono.id)"><i class="far fa-trash-alt"></i> Eliminar</button></td>
         <td *ngIf="isAdmin"><button class="btn btn-outline-success" routerLink="/ordenMigracion/{{telefono.id}}"><i class="fas fa-phone-volume"></i> Migrar</button></td>
       </tr>
     </tbody>

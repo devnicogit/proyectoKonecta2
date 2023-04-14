@@ -26,6 +26,8 @@ import { DetalleTelefonoComponent } from './telefono/detalle-telefono/detalle-te
 import { EditarTelefonoComponent } from './telefono/editar-telefono/editar-telefono.component';
 import { NuevoTelefonoComponent } from './telefono/nuevo-telefono/nuevo-telefono.component';
 import { ListaMigracionComponent } from './migracion/lista-migracion/lista-migracion.component';
+import { DetalleOrdenMigracion } from './models/detalle-orden-migracion';
+import { ListaDetalleMigracionComponent } from './detalleordenmigracion/lista-detalle-migracion/lista-detalle-migracion.component';
 
 
 
@@ -56,8 +58,9 @@ const routes: Routes = [
   { path: 'editarTelefono/:id', component: EditarTelefonoComponent, canActivate: [ProdGuardService], data : {expectedRol: ['admin']}},
   { path: 'nuevoTelefono', component: NuevoTelefonoComponent, canActivate: [ProdGuardService], data : {expectedRol: ['admin']}},
   { path: 'ordenMigracion/:id', component: MigracionComponent, canActivate: [ProdGuardService], data: {expectedRol: ['admin']}},
-  { path: 'listaOrden', component: ListaMigracionComponent, canActivate: [ProdGuardService], data: {expectedRol: ['admin']}},
+  { path: 'listaOrden', component: ListaMigracionComponent, canActivate: [ProdGuardService], data: {expectedRol: ['admin','user']}},
   { path: 'nuevaOrden', component: MigracionComponent, canActivate: [ProdGuardService], data: {expectedRol: ['admin']}},
+  { path: 'listaDetalleOrden', component: ListaDetalleMigracionComponent, canActivate: [ProdGuardService], data: {expectedRol: ['admin', 'user']}},
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

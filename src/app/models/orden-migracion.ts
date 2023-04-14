@@ -8,12 +8,14 @@ export class OrdenMigracion {
     asesor: Asesor;
     plan: PlanPostpago;
     fecha: Date;
+    pdf?: string;
 
-    constructor(telefono: Telefono,asesor: Asesor, plan:PlanPostpago, fecha:Date) {
+    constructor(telefono: Telefono,asesor: Asesor, plan:PlanPostpago, fecha:Date, pdf:string) {
         this.telefono = telefono;
         this.asesor = asesor;
         this.plan = plan;
         this.fecha = fecha;
+        this.pdf = pdf;
     }
 
     
