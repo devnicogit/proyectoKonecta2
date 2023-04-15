@@ -5,6 +5,7 @@ export class OrdenMigracionDto {
     plan: number;
     fecha: string;
     pdf?: string;
+    caracteristica: string;
   
     constructor(telefono: number, asesor: number, plan: number, fecha: string, pdf: string) {
       this.telefono = telefono;

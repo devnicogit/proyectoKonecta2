@@ -223,12 +223,14 @@ export class MigracionComponent implements OnInit {
             asesor: this.userId,
             plan: this.planSeleccionado.planId,
             fecha: fechaFormateada,
-            pdf: pdfUrl
+            pdf: pdfUrl,
+            caracteristica: this.detallePlanSeleccionado
           };
-      
+        
         this.ordenMigracionService.save(ordenMigracion).subscribe(
           response => {
             this.ordenes.push(this.orden);
+            
             this.toastr.success('Orden de migración creada exitosamente');
             this.router.navigate(['/listaOrden']);
           },
