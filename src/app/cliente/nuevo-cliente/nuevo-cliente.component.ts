@@ -22,6 +22,7 @@ export class NuevoClienteComponent implements OnInit {
   nombre: string = '';
   apellido: string = '';
   direccion: string = '';
+  email: string = '';
   telefono: string = '';
   tipoCliente : TipoCliente;
   planPostpago: PlanPostpago;
@@ -93,6 +94,7 @@ export class NuevoClienteComponent implements OnInit {
       nombre: this.nombre,
       apellido: this.apellido,
       direccion: this.direccion,
+      email: this.email,
       tipoClienteIds: this.tipoClienteIds
     };
     //this.cliente = new Cliente(this.dni,this.nombre,this.apellido, this.direccion, this.tipoCliente2);

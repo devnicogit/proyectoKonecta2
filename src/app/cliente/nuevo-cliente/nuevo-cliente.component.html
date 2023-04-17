@@ -39,6 +39,11 @@
                             [(ngModel)]="direccion" required>
                         </div>
                         <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email" name="email"
+                            [(ngModel)]="email" required>
+                        </div>
+                        <div class="form-group">
                             <label for="tipoCliente">Tipo de Cliente</label>
                             <select class="form-control" id="tipoCliente" name="tipoClienteIds" [(ngModel)]="tipoClienteIds" (change)="onTipoClienteChange($event)" required>
                               <option *ngFor="let tipo of tiposCliente" [value]="tipo.tipoId">{{ tipo.nombre }}</option>

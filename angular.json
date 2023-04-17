@@ -21,7 +21,12 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "jSignature.min.js",
+                "input": "src/assets/js",
+                "output": "/js/"
+              }
             ],
             "styles": [
               "node_modules/ngx-toastr/toastr.css",
@@ -87,7 +92,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["../node_modules/jSignature/js/jSignature.min.js"]
           }
         },
         "lint": {

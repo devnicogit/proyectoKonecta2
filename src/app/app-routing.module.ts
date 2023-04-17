@@ -36,6 +36,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
   { path: 'registro', component: RegistroComponent, canActivate: [LoginGuard] },
   { path: 'sendemail', component: SendEmailComponent, canActivate: [LoginGuard] },
+  { path: 'sendemailpdf', component: MigracionComponent, canActivate:[LoginGuard]},
   { path: 'change-password/:tokenPassword', component: ChangePasswordComponent, canActivate: [LoginGuard] },
   { path: 'asesores', component: MigracionComponent, canActivate:[LoginGuard]},
   { path: 'asesores/:nombreUsuario',component:MigracionComponent, canActivate:[LoginGuard]},

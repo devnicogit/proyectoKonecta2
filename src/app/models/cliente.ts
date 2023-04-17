@@ -7,6 +7,7 @@ export class Cliente {
     nombre: string;
     apellido: string;
     direccion: string;
+    email: string;
     tipoClienteIds: number[];
     //telefono: string;
     //tipoCliente: TipoCliente;
@@ -30,12 +31,14 @@ export class Cliente {
         this.planPostpago = planPostpago;
     }
 */
-    constructor(dni: string,nombre: string, apellido: string,direccion, tipoClienteIds:number[]) {
+    constructor(dni: string,nombre: string, apellido: string,direccion, email: string, tipoClienteIds:number[]) {
         this.dni=dni;
         this.nombre = nombre;
         this.apellido = apellido;
         this.direccion = direccion;
+        this.email = email;
         this.tipoClienteIds = tipoClienteIds;
+
     }
 
 }

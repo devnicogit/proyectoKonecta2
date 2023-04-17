@@ -7,6 +7,7 @@ export class ClienteDTO {
     nombre: string;
     apellido: string;
     direccion: string;
+    email: string;
     /*telefono: string;
     tipoCliente: number;
     planPostpago: number;*/
@@ -19,11 +20,12 @@ export class ClienteDTO {
 
     }*/
 
-    constructor(dni: string,nombre: string, apellido: string,direccion) {
+    constructor(dni: string,nombre: string, apellido: string,direccion, email:string) {
         this.dni=dni;
         this.nombre = nombre;
         this.apellido = apellido;
         this.direccion = direccion;
+        this.email = email;
 
     }
 

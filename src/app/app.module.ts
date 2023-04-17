@@ -36,6 +36,7 @@ import { ListaTelefonoComponent } from './telefono/lista-telefono/lista-telefono
 import { NuevoTelefonoComponent } from './telefono/nuevo-telefono/nuevo-telefono.component';
 import { ListaMigracionComponent } from './migracion/lista-migracion/lista-migracion.component';
 import { ListaDetalleMigracionComponent } from './detalleordenmigracion/lista-detalle-migracion/lista-detalle-migracion.component';
+import { EmailPasswordService } from './service/email-password.service';
 
 
 
@@ -78,7 +79,7 @@ import { ListaDetalleMigracionComponent } from './detalleordenmigracion/lista-de
     HttpClientModule,
     FormsModule
   ],
-  providers: [interceptorProvider],
+  providers: [interceptorProvider, EmailPasswordService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

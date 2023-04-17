@@ -22,6 +22,7 @@ export class EditarClienteComponent implements OnInit {
   apellido: string = '';
   direccion: string = '';
   telefono: string = '';
+  email: string = '';
   tipoCliente : TipoCliente;
   planPostpago: PlanPostpago;
   tipoCliente2 : number;
@@ -52,6 +53,7 @@ export class EditarClienteComponent implements OnInit {
         this.nombre = this.cliente.nombre;
         this.apellido = this.cliente.apellido;
         this.direccion = this.cliente.direccion;
+        this.email = this.cliente.email;
         // este-->this.telefono = this.cliente.telefono;
         // este-->this.planPostpago = this.cliente.planPostpago;
         // este-->this.planPostpago2 = this.cliente.planPostpago.planId;
@@ -145,6 +147,7 @@ export class EditarClienteComponent implements OnInit {
       this.cliente.nombre,
       this.cliente.apellido,
       this.cliente.direccion,
+      this.cliente.email,
       this.cliente.tipoClienteIds
       /*this.cliente.telefono,
       this.planPostpago,
